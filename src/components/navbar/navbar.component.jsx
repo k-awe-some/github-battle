@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./navbar.styles.scss";
 
 export default class NavBar extends React.Component {
@@ -49,4 +50,9 @@ const NavLang = ({ selected, onClickLang }) => {
       ))}
     </ul>
   );
+};
+
+NavLang.propTypes = {
+  selected: PropTypes.string.isRequired,
+  onClickLang: PropTypes.func.isRequired
 };
