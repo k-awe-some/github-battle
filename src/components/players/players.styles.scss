@@ -11,4 +11,19 @@
       width: 45%;
     }
   }
+
+  .btn-battle {
+    height: 3rem;
+    width: 15rem;
+    margin: 48px auto 0;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #e6e6e6;
+    background: #141414;
+  }
 }

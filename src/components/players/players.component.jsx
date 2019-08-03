@@ -2,6 +2,7 @@ import React from "react";
 
 import PlayerInput from "../player-input/player-input.component";
 import PlayerInfo from "../player-info/player-info.component";
+import Results from "../../pages/results/results.component";
 import "./players.styles.scss";
 
 class Players extends React.Component {
@@ -10,7 +11,8 @@ class Players extends React.Component {
 
     this.state = {
       playerOne: "",
-      playerTwo: ""
+      playerTwo: "",
+      battle: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,7 +32,17 @@ class Players extends React.Component {
   }
 
   render() {
-    const { playerOne, playerTwo } = this.state;
+    const { playerOne, playerTwo, battle } = this.state;
+
+    if (battle === true) {
+      return (
+        <React.Fragment>
+          <h1>Results</h1>
+
+          <Results playerOne={playerOne} playerTwo={playerTwo} />
+        </React.Fragment>
+      );
+    }
 
     return (
       <div className="players-container">
@@ -66,6 +78,19 @@ class Players extends React.Component {
             )}
           </div>
         </div>
+
+        {playerOne && playerTwo && (
+          <button
+            className="btn-battle"
+            onClick={() =>
+              this.setState({
+                battle: true
+              })
+            }
+          >
+            Battle
+          </button>
+        )}
       </div>
     );
   }
