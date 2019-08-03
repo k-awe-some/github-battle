@@ -1,0 +1,51 @@
+.repos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .repo-card {
+    width: 250px;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #ebebeb;
+    border-radius: 5px;
+
+    .repo-index {
+      font-size: 2rem;
+      font-weight: 300;
+      margin: 1rem 2rem;
+      text-align: center;
+    }
+
+    .repo-avatar {
+      width: 10rem;
+      height: 10rem;
+      border-radius: 3px;
+      margin: 0 auto;
+      display: block; // centers avatar
+    }
+
+    .repo-link {
+      text-align: center;
+    }
+
+    .repo-info-list {
+      margin: 1rem 0;
+      
+      li {
+        font-size: 1.2rem;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+
+        a {
+          font-weight: 500;
+        }
+
+        svg {
+          margin: 0.3rem 0.8rem;
+        }
+      }
+    }
+  }
+}
