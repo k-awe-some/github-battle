@@ -5,7 +5,7 @@ import "./instructions.styles.scss";
 
 const Instructions = () => (
   <div className="instructions-container">
-    <h1 className="instructions-header">Instructions</h1>
+    <h1>Instructions</h1>
     <ol className="instructions-list">
       <li>
         <h3>1. Enter two Github users</h3>

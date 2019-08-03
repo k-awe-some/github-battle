@@ -1,0 +1,9 @@
+.players-container {
+  display: flex;
+  flex-direction: column;
+
+  .players {
+    display: flex;
+    flex-direction: row;
+  }
+}
