@@ -24,7 +24,7 @@ const ReposGrid = ({ repos }) => (
 
       return (
         <li className="repo-card" key={html_url}>
-          <h4 className="repo-index">{`#${index + 1}`}</h4>
+          <h3 className="repo-index">{`#${index + 1}`}</h3>
           <img
             className="repo-avatar"
             src={avatar_url}

@@ -1,0 +1,15 @@
+.instructions-container {
+  text-align: center;
+
+  .instructions-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    svg {
+      padding: 3rem;
+      border-radius: 3px;
+      background-color: #ebebeb;
+    }
+  }
+}

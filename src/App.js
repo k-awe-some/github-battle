@@ -1,12 +1,14 @@
 import React from "react";
 import "./App.css";
-import NavBar from "./components/nav-bar/nav-bar.component";
+import Popular from "./pages/popular/popular.component";
+import Battle from "./pages/battle/battle.component";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <NavBar />
+        <Battle />
+        {/*<Popular />*/}
       </div>
     );
   }
