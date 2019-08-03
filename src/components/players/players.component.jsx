@@ -2,7 +2,7 @@ import React from "react";
 
 import PlayerInput from "../player-input/player-input.component";
 import PlayerInfo from "../player-info/player-info.component";
-import Results from "../../pages/results/results.component";
+import Results from "../results/results.component";
 import "./players.styles.scss";
 
 class Players extends React.Component {
