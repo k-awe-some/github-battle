@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./players-input.styles.scss";
+import "./player-input.styles.scss";
 
-class PlayersInput extends React.Component {
+class PlayerInput extends React.Component {
   constructor(props) {
     super(props);
 
@@ -53,9 +53,9 @@ class PlayersInput extends React.Component {
   }
 }
 
-PlayersInput.propTypes = {
+PlayerInput.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired
 };
 
-export default PlayersInput;
+export default PlayerInput;

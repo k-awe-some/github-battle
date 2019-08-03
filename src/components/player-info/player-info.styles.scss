@@ -1,0 +1,47 @@
+.player-label {
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding-top: 20px;
+  margin: 0;
+}
+
+.player-info-box {
+  padding: 5px 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #ebebeb;
+  border-radius: 3px;
+  border: none;
+  box-shadow: inset, 1px, rgba(0, 0, 0, 0.15);
+
+  .player-avatar {
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .player-username {
+    font-size: 1.2rem;
+    font-weight: 500;
+    flex-grow: 1;
+
+    &:hover {
+      color: #34b1eb;
+    }
+  }
+
+  .btn {
+    // margin-right: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      color: #eb4034;
+    }
+  }
+}

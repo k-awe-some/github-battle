@@ -1,8 +1,8 @@
 .player-form {
-  width: 50%;
+
   display: flex;
   flex-direction: column;
-  flex: 1;
+  // flex: 1;
 
   .player-label {
     text-align: left;
@@ -12,8 +12,7 @@
   }
 
   .player-inputs {
-    padding-top: 10px;
-    // width: 50%;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
 

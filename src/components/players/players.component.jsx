@@ -1,16 +1,74 @@
 import React from "react";
 
-import PlayersInput from "../players-input/players-input.component";
+import PlayerInput from "../player-input/player-input.component";
+import PlayerInfo from "../player-info/player-info.component";
 import "./players.styles.scss";
 
-const Players = () => (
-  <div className="players-container">
-    <h1>Players</h1>
-    <div className="players">
-      <PlayersInput label={"Player 1"} onSubmit={value => console.log(value)} />
-      <PlayersInput label={"Player 2"} onSubmit={value => console.log(value)} />
-    </div>
-  </div>
-);
+class Players extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      playerOne: "",
+      playerTwo: ""
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.resetPlayer = this.resetPlayer.bind(this);
+  }
+
+  handleSubmit(id, player) {
+    this.setState({
+      [id]: player
+    });
+  }
+
+  resetPlayer(id) {
+    this.setState({
+      [id]: ""
+    });
+  }
+
+  render() {
+    const { playerOne, playerTwo } = this.state;
+
+    return (
+      <div className="players-container">
+        <h1>Players</h1>
+        <div className="players">
+          <div className="player">
+            {!playerOne ? (
+              <PlayerInput
+                label={"Player One"}
+                onSubmit={player => this.handleSubmit("playerOne", player)}
+              />
+            ) : (
+              <PlayerInfo
+                username={playerOne}
+                label={"Player One"}
+                onReset={() => this.resetPlayer("playerOne")}
+              />
+            )}
+          </div>
+
+          <div className="player">
+            {!playerTwo ? (
+              <PlayerInput
+                label={"Player Two"}
+                onSubmit={player => this.handleSubmit("playerTwo", player)}
+              />
+            ) : (
+              <PlayerInfo
+                username={playerTwo}
+                label={"Player Two"}
+                onReset={() => this.resetPlayer("playerTwo")}
+              />
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
 
 export default Players;

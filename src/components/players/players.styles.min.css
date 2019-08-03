@@ -1,1 +1,1 @@
-.players-container{display:flex;flex-direction:column}.players-container .players{display:flex;flex-direction:row}
+.players-container{display:flex;flex-direction:column}.players-container .players{display:flex;flex-direction:row;justify-content:space-between}.players-container .players .player{width:45%}
