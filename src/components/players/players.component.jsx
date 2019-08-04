@@ -38,7 +38,17 @@ class Players extends React.Component {
       return (
         <React.Fragment>
           <h1>Results</h1>
-          <Results playerOne={playerOne} playerTwo={playerTwo} />
+          <Results
+            playerOne={playerOne}
+            playerTwo={playerTwo}
+            onReset={() =>
+              this.setState({
+                playerOne: "",
+                playerTwo: "",
+                battle: false
+              })
+            }
+          />
         </React.Fragment>
       );
     }

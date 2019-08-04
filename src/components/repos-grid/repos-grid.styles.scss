@@ -3,46 +3,21 @@
   flex-wrap: wrap;
   justify-content: space-around;
 
-  .repo-card {
-    width: 250px;
-    padding: 20px;
-    margin: 10px 0;
-    background-color: #ebebeb;
-    border-radius: 5px;
+  .repo-info-list {
+    margin: 1rem 0;
 
-    .repo-index {
-      margin: 1rem 2rem;
-      text-align: center;
-    }
+    li {
+      font-size: 1.2rem;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
 
-    .repo-avatar {
-      width: 10rem;
-      height: 10rem;
-      border-radius: 3px;
-      margin: 0 auto;
-      display: block; // centers avatar
-    }
+      a {
+        font-weight: 500;
+      }
 
-    .repo-link {
-      text-align: center;
-    }
-
-    .repo-info-list {
-      margin: 1rem 0;
-
-      li {
-        font-size: 1.2rem;
-        font-weight: 400;
-        display: flex;
-        align-items: center;
-
-        a {
-          font-weight: 500;
-        }
-
-        svg {
-          margin: 0.3rem 0.8rem;
-        }
+      svg {
+        margin: 0.3rem 0.8rem;
       }
     }
   }

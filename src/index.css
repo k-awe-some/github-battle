@@ -12,8 +12,9 @@ code {
     monospace;
 }
 
-ul, ol {
-  padding: 0
+ul,
+ol {
+  padding: 0;
 }
 
 li {
@@ -22,21 +23,26 @@ li {
 
 a {
   text-decoration: none;
-  color: inherit
+  color: inherit;
 }
 
 h1 {
-  font-size: 2.5rem;
-  font-weight: 500;
-  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 400;
 }
 
-h3 {
-  font-size: 1.8rem;
+h2 {
+  font-size: 2rem;
   font-weight: 300;
 }
 
-h4 {
+h3 {
   font-size: 1.6rem;
+  font-weight: 500;
+  color: rgb(187, 46, 31);
+}
+
+h4 {
+  font-size: 1.2rem;
   font-weight: 500;
 }

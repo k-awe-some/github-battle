@@ -7,6 +7,8 @@ import {
   FaExclamationTriangle
 } from "react-icons/fa";
 
+import Card from "../card/card.component";
+
 import "./repos-grid.styles.scss";
 
 const ReposGrid = ({ repos }) => (
@@ -23,18 +25,12 @@ const ReposGrid = ({ repos }) => (
       const { login, avatar_url } = owner;
 
       return (
-        <li className="repo-card" key={html_url}>
-          <h3 className="repo-index">{`#${index + 1}`}</h3>
-          <img
-            className="repo-avatar"
-            src={avatar_url}
-            alt={`Avatar for ${login}`}
-          />
-
-          <h2 className="repo-link">
-            <a href={html_url}>{login}</a>
-          </h2>
-
+        <Card
+          header={`#${index + 1}`}
+          avatar={avatar_url}
+          href={html_url}
+          username={login}
+        >
           <ul className="repo-info-list">
             <li>
               <FaUser color="#FFBF74" size={22} />
@@ -53,7 +49,20 @@ const ReposGrid = ({ repos }) => (
               {open_issues.toLocaleString()} open issues
             </li>
           </ul>
-        </li>
+        </Card>
+
+        // {        <li className="repo-card" key={html_url}>
+        //           <h3 className="repo-index">{`#${index + 1}`}</h3>
+        //           <img
+        //             className="repo-avatar"
+        //             src={avatar_url}
+        //             alt={`Avatar for ${login}`}
+        //           />
+        //
+        //           <h2 className="repo-link">
+        //             <a href={html_url}>{login}</a>
+        //           </h2>
+        //           </li>}
       );
     })}
   </ul>

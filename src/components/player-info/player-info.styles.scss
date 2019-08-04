@@ -15,7 +15,7 @@
   background-color: #ebebeb;
   border-radius: 3px;
   border: none;
-  box-shadow: inset, 1px, rgba(0, 0, 0, 0.15);
+  height: 100px;
 
   .player-avatar {
     border-radius: 50%;
@@ -35,7 +35,6 @@
   }
 
   .btn {
-    // margin-right: 20px;
     background-color: transparent;
     border: none;
     cursor: pointer;

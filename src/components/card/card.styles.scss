@@ -1,0 +1,31 @@
+.card {
+  width: 250px;
+  padding: 0px 20px;
+  margin: 10px 3px;
+  background-color: #ebebeb;
+  border-radius: 5px;
+
+  .header {
+    // h2
+    margin: 1rem 2rem;
+    text-align: center;
+  }
+
+  .avatar {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 3px;
+    margin: 0 auto;
+    display: block; // centers avatar
+  }
+
+  .subheader {
+    // h4
+    text-align: center;
+  }
+
+  .link {
+    // h3
+    text-align: center;
+  }
+}

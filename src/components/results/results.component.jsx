@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   FaCompass,
   FaBriefcase,
@@ -8,8 +9,48 @@ import {
   FaUser
 } from "react-icons/fa";
 
+import Card from "../card/card.component";
 import { getResults } from "../../utils/api";
 import "./results.styles.scss";
+
+const UserProfile = ({ profile }) => (
+  <ul className="player-info">
+    {profile.name && (
+      <li>
+        <FaUser color="#EF7373" size="25" />
+        {profile.name}
+      </li>
+    )}
+    {profile.location && (
+      <li>
+        <FaCompass color="#9074FF" size="25" />
+        {profile.location}
+      </li>
+    )}
+    {profile.company && (
+      <li>
+        <FaBriefcase color="#967B71" size="25" />
+        {profile.company}
+      </li>
+    )}
+    <li>
+      <FaUsers color="#81C3F5" size="25" />
+      {profile.followers} followers
+    </li>
+    <li>
+      <FaUserFriends color="#40B75F" size="25" />
+      {profile.following} following
+    </li>
+    <li>
+      <FaCode color="#3B4C55" size="25" />
+      {profile.public_repos} repositories
+    </li>
+  </ul>
+);
+
+UserProfile.propTypes = {
+  profile: PropTypes.object.isRequired
+};
 
 class Results extends React.Component {
   constructor(props) {
@@ -55,99 +96,32 @@ class Results extends React.Component {
     }
 
     return (
-      <div className="results-container">
-        <div className="result-card">
-          <h3
-            style={{
-              color: "#34B1EB",
-              fontWeight: "400"
-            }}
+      <React.Fragment>
+        <div className="results-container">
+          <Card
+            header={winner.score === loser.score ? "Tie" : "Winner"}
+            avatar={winner.profile.avatar_url}
+            subheader={`Score: ${winner.score}`}
+            href={winner.profile.html_url}
+            username={winner.profile.login}
           >
-            {winner.score === loser.score ? "Tie" : "Winner"}
-          </h3>
-          <img
-            className="player-avatar"
-            src={`https://github.com/${winner.profile.login}.png?size=200`}
-            alt="Winner's avatar"
-          />
-          <p className="player-score">Score: {winner.score}</p>
-          <h4>
-            <a href={winner.profile.html_url}>{winner.profile.login}</a>
-          </h4>
-          <ol className="player-info">
-            <li>
-              <FaUser color="#EF7373" size="25" />
-              {winner.profile.name}
-            </li>
-            <li>
-              <FaCompass color="#9074FF" size="25" />
-              {winner.profile.location}
-            </li>
-            <li>
-              <FaBriefcase color="#967B71" size="25" />
-              {winner.profile.company}
-            </li>
-            <li>
-              <FaUsers color="#81C3F5" size="25" />
-              {winner.profile.followers} followers
-            </li>
-            <li>
-              <FaUserFriends color="#40B75F" size="25" />
-              {winner.profile.following} following
-            </li>
-            <li>
-              <FaCode color="#3B4C55" size="25" />
-              {winner.profile.public_repos} repositories
-            </li>
-          </ol>
-        </div>
+            <UserProfile profile={winner.profile} />
+          </Card>
 
-        <div className="result-card">
-          <h3
-            style={{
-              color: "#EB4034",
-              fontWeight: "400"
-            }}
+          <Card
+            header={winner.score === loser.score ? "Tie" : "Loser"}
+            avatar={loser.profile.avatar_url}
+            subheader={`Score: ${loser.score}`}
+            href={loser.profile.html_url}
+            username={loser.profile.login}
           >
-            Loser
-          </h3>
-          <img
-            className="player-avatar"
-            src={`https://github.com/${loser.profile.login}.png?size=250`}
-            alt="Loser's avatar"
-          />
-          <p className="player-score">Score: {loser.score}</p>
-          <h4>
-            <a href={loser.profile.html_url}>{loser.profile.login}</a>
-          </h4>
-          <ol className="player-info">
-            <li>
-              <FaUser color="#EF7373" size="25" />
-              {loser.profile.name}
-            </li>
-            <li>
-              <FaCompass color="#9074FF" size="25" />
-              {loser.profile.location}
-            </li>
-            <li>
-              <FaBriefcase color="#967B71" size="25" />
-              {loser.profile.company}
-            </li>
-            <li>
-              <FaUsers color="#81C3F5" size="25" />
-              {loser.profile.followers} followers
-            </li>
-            <li>
-              <FaUserFriends color="#40B75F" size="25" />
-              {loser.profile.following} following
-            </li>
-            <li>
-              <FaCode color="#3B4C55" size="25" />
-              {loser.profile.public_repos} repositories
-            </li>
-          </ol>
+            <UserProfile profile={loser.profile} />
+          </Card>
         </div>
-      </div>
+        <button className="reset-btn" onClick={this.props.onReset}>
+          Reset
+        </button>
+      </React.Fragment>
     );
   }
 }
