@@ -11,6 +11,7 @@ import {
 
 import Loading from "../loading/loading.component";
 import Card from "../card/card.component";
+import Tooltip from "../tooltip/tooltip.component";
 import { getResults } from "../../utils/api";
 import "./results.styles.scss";
 
@@ -24,14 +25,18 @@ const UserProfile = ({ profile }) => (
     )}
     {profile.location && (
       <li>
-        <FaCompass color="#9074FF" size="25" />
-        {profile.location}
+        <Tooltip text="User's location">
+          <FaCompass color="#9074FF" size="25" />
+          {profile.location}
+        </Tooltip>
       </li>
     )}
     {profile.company && (
       <li>
-        <FaBriefcase color="#967B71" size="25" />
-        {profile.company}
+        <Tooltip text="User's company">
+          <FaBriefcase color="#967B71" size="25" />
+          {profile.company}
+        </Tooltip>
       </li>
     )}
     <li>

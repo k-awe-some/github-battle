@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 
 import Card from "../card/card.component";
+import Tooltip from "../tooltip/tooltip.component";
 
 import "./repos-grid.styles.scss";
 
@@ -33,8 +34,10 @@ const ReposGrid = ({ repos }) => (
         >
           <ul className="repo-info-list">
             <li>
-              <FaUser color="#FFBF74" size={22} />
-              <a href={`https://github.com/${login}`}>{login}</a>
+              <Tooltip text="GitHub username">
+                <FaUser color="#FFBF74" size={22} />
+                <a href={`https://github.com/${login}`}>{login}</a>
+              </Tooltip>
             </li>
             <li>
               <FaStar color="#FFD700" size={22} />
@@ -50,19 +53,6 @@ const ReposGrid = ({ repos }) => (
             </li>
           </ul>
         </Card>
-
-        // {        <li className="repo-card" key={html_url}>
-        //           <h3 className="repo-index">{`#${index + 1}`}</h3>
-        //           <img
-        //             className="repo-avatar"
-        //             src={avatar_url}
-        //             alt={`Avatar for ${login}`}
-        //           />
-        //
-        //           <h2 className="repo-link">
-        //             <a href={html_url}>{login}</a>
-        //           </h2>
-        //           </li>}
       );
     })}
   </ul>
