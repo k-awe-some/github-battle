@@ -35,7 +35,7 @@ const getRepos = username => {
 
 const getStarCount = repos => {
   return repos.reduce(
-    (count, { stargazers_count }) => count * stargazers_count,
+    (count, { stargazers_count }) => count + stargazers_count,
     0
   );
 };
