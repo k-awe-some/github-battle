@@ -4,7 +4,7 @@ const params = `?client_id=${id}&client_secret=${sec}`;
 
 const getErrorMsg = (message, username) => {
   if (message === "Not Found") {
-    return `${username} does not exist`;
+    return `Ooops... ${username} does not exist. Please enter a valid GitHub username.`;
   }
   return message;
 };

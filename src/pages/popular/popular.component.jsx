@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./popular.styles.scss";
+
 import { fetchPopularRepos } from "../../utils/api";
 import NavBar from "../../components/nav-bar/nav-bar.component";
 import ReposGrid from "../../components/repos-grid/repos-grid.component";
@@ -58,7 +60,7 @@ export default class Popular extends React.Component {
       <React.Fragment>
         <NavBar selected={selectedLanguage} onClickLang={this.updateLanguage} />
         {this.isLoading() && <p>LOADING</p>}
-        {error && <p>{error}</p>}
+        {error && <p className="error">{error}</p>}
         {repos[selectedLanguage] && (
           <ReposGrid repos={repos[selectedLanguage]} />
         )}
