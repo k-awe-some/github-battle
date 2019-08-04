@@ -9,6 +9,7 @@ import {
   FaUser
 } from "react-icons/fa";
 
+import Loading from "../loading/loading.component";
 import Card from "../card/card.component";
 import { getResults } from "../../utils/api";
 import "./results.styles.scss";
@@ -88,7 +89,7 @@ class Results extends React.Component {
     const { winner, loser, error, loading } = this.state;
 
     if (loading === true) {
-      return <p>LOADING</p>;
+      return <Loading text="Calculating results" speed={150} />;
     }
 
     if (error) {
