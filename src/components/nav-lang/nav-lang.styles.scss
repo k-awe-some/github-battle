@@ -1,0 +1,18 @@
+.nav-lang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .nav-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .nav-link {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit
+  }
+}

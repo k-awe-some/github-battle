@@ -4,7 +4,7 @@ import "./popular.styles.scss";
 
 import { fetchPopularRepos } from "../../utils/api";
 import Loading from "../../components/loading/loading.component";
-import NavBar from "../../components/nav-bar/nav-bar.component";
+import NavLang from "../../components/nav-lang/nav-lang.component";
 import ReposGrid from "../../components/repos-grid/repos-grid.component";
 
 export default class Popular extends React.Component {
@@ -59,7 +59,10 @@ export default class Popular extends React.Component {
     const { selectedLanguage, repos, error } = this.state;
     return (
       <React.Fragment>
-        <NavBar selected={selectedLanguage} onClickLang={this.updateLanguage} />
+        <NavLang
+          selected={selectedLanguage}
+          onClickLang={this.updateLanguage}
+        />
         {this.isLoading() && <Loading text="Fetching repos" speed={250} />}
         {error && <p className="error">{error}</p>}
         {repos[selectedLanguage] && (

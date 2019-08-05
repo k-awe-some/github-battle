@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Popular from "./pages/popular/popular.component";
 import Battle from "./pages/battle/battle.component";
+import NavBar from "./components/nav-bar/nav-bar.component";
 import { ThemeProvider } from "./contexts/theme";
 
 class App extends React.Component {
@@ -11,7 +12,7 @@ class App extends React.Component {
     this.state = {
       theme: "light",
       toggleTheme: () => {
-        this.setState(theme => ({
+        this.setState(({ theme }) => ({
           theme: theme === "light" ? "dark" : "light"
         }));
       }
@@ -20,8 +21,12 @@ class App extends React.Component {
   render() {
     return (
       <ThemeProvider value={this.state}>
-        <div className="App">
-          <Popular />
+        <div className={this.state.theme}>
+          <div className="App">
+            <NavBar />
+            <Popular />
+            <Battle />
+          </div>
         </div>
       </ThemeProvider>
     );

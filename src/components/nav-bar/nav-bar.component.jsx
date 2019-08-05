@@ -1,31 +1,20 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { ThemeConsumer } from "../../contexts/theme";
 
 import "./nav-bar.styles.scss";
 
-const NavBar = ({ selected, onClickLang }) => {
-  const languages = ["All", "Javascript", "Ruby", "Java", "CSS", "Python"];
-
+const NavBar = () => {
   return (
-    <ul className="nav-bar">
-      {languages.map(language => (
-        <li key={language}>
-          <button
-            className="nav-btn nav-link"
-            style={language === selected ? { color: "rgb(187, 46, 31)" } : null}
-            onClick={() => onClickLang(language)}
-          >
-            {language}
+    <ThemeConsumer>
+      {({ theme, toggleTheme }) => (
+        <nav>
+          <button onClick={toggleTheme}>
+            {theme === "light" ? "🔦" : "💡"}
           </button>
-        </li>
-      ))}
-    </ul>
+        </nav>
+      )}
+    </ThemeConsumer>
   );
-};
-
-NavBar.propTypes = {
-  selected: PropTypes.string.isRequired,
-  onClickLang: PropTypes.func.isRequired
 };
 
 export default NavBar;
