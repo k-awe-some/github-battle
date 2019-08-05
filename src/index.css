@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+*:focus {
+  outline: none;
+}
+
 ul,
 ol {
   padding: 0;
@@ -27,6 +31,7 @@ a {
 }
 
 h1 {
+  text-align: center;
   font-size: 2.4rem;
   font-weight: 400;
 }

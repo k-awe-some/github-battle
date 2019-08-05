@@ -24,8 +24,8 @@ class App extends React.Component {
         <div className={this.state.theme}>
           <div className="App">
             <NavBar />
+
             <Popular />
-            <Battle />
           </div>
         </div>
       </ThemeProvider>

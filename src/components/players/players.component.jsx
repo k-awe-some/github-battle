@@ -55,7 +55,7 @@ class Players extends React.Component {
 
     return (
       <div className="players-container">
-        <h1>Players</h1>
+        <h1 style={{ textAlign: "center" }}>Players</h1>
         <div className="players">
           <div className="player">
             {!playerOne ? (
