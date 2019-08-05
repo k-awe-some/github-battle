@@ -1,9 +1,26 @@
-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
-  svg {
+  ul {
+    display: flex;
+    flex-direction: row;
+
+    li {
+      margin-right: 25px;
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+  }
+
+  button {
     background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    svg {
+      background-color: transparent;
+    }
   }
 }

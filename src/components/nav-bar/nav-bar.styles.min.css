@@ -1,1 +1,1 @@
-button{background-color:transparent;border:none;cursor:pointer}button svg{background-color:transparent}
+.nav-bar{display:flex;flex-direction:row;justify-content:space-between}.nav-bar ul{display:flex;flex-direction:row}.nav-bar ul li{margin-right:25px;font-weight:500;font-size:1.2rem}.nav-bar button{background-color:transparent;border:none;cursor:pointer}.nav-bar button svg{background-color:transparent}
