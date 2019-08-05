@@ -30,7 +30,7 @@ const ReposGrid = ({ repos }) => (
           header={`#${index + 1}`}
           avatar={avatar_url}
           href={html_url}
-          username={login}
+          name={name}
         >
           <ul className="repo-info-list">
             <li>
