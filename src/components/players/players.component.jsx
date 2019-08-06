@@ -6,29 +6,22 @@ import PlayerInfo from "../player-info/player-info.component";
 import "./players.styles.scss";
 
 class Players extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    playerOne: "",
+    playerTwo: ""
+  };
 
-    this.state = {
-      playerOne: "",
-      playerTwo: ""
-    };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.resetPlayer = this.resetPlayer.bind(this);
-  }
-
-  handleSubmit(id, player) {
+  handleSubmit = (id, player) => {
     this.setState({
       [id]: player
     });
-  }
+  };
 
-  resetPlayer(id) {
+  resetPlayer = id => {
     this.setState({
       [id]: ""
     });
-  }
+  };
 
   render() {
     const { playerOne, playerTwo } = this.state;
