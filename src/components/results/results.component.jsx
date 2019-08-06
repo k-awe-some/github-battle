@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import queryString from "query-string";
+import { Link } from "react-router-dom";
 import {
   FaCompass,
   FaBriefcase,
@@ -71,7 +73,9 @@ class Results extends React.Component {
   }
 
   componentDidMount() {
-    const { playerOne, playerTwo } = this.props;
+    const { playerOne, playerTwo } = queryString.parse(
+      this.props.location.search
+    );
 
     getResults([playerOne, playerTwo])
       .then(players =>
@@ -94,7 +98,7 @@ class Results extends React.Component {
     const { winner, loser, error, loading } = this.state;
 
     if (loading === true) {
-      return <Loading text="Calculating results" speed={150} />;
+      return <Loading text="Battling" speed={150} />;
     }
 
     if (error) {
@@ -109,7 +113,7 @@ class Results extends React.Component {
             avatar={winner.profile.avatar_url}
             subheader={`Score: ${winner.score}`}
             href={winner.profile.html_url}
-            username={winner.profile.login}
+            name={winner.profile.login}
           >
             <UserProfile profile={winner.profile} />
           </Card>
@@ -119,14 +123,15 @@ class Results extends React.Component {
             avatar={loser.profile.avatar_url}
             subheader={`Score: ${loser.score}`}
             href={loser.profile.html_url}
-            username={loser.profile.login}
+            name={loser.profile.login}
           >
             <UserProfile profile={loser.profile} />
           </Card>
         </div>
-        <button className="reset-btn" onClick={this.props.onReset}>
+
+        <Link to="/battle" className="reset-btn" onClick={this.props.onReset}>
           Reset
-        </button>
+        </Link>
       </React.Fragment>
     );
   }

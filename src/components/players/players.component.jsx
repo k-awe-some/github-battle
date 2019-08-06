@@ -1,8 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import PlayerInput from "../player-input/player-input.component";
 import PlayerInfo from "../player-info/player-info.component";
-import Results from "../results/results.component";
 import "./players.styles.scss";
 
 class Players extends React.Component {
@@ -11,8 +11,7 @@ class Players extends React.Component {
 
     this.state = {
       playerOne: "",
-      playerTwo: "",
-      battle: false
+      playerTwo: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,26 +31,7 @@ class Players extends React.Component {
   }
 
   render() {
-    const { playerOne, playerTwo, battle } = this.state;
-
-    if (battle === true) {
-      return (
-        <React.Fragment>
-          <h1>Results</h1>
-          <Results
-            playerOne={playerOne}
-            playerTwo={playerTwo}
-            onReset={() =>
-              this.setState({
-                playerOne: "",
-                playerTwo: "",
-                battle: false
-              })
-            }
-          />
-        </React.Fragment>
-      );
-    }
+    const { playerOne, playerTwo } = this.state;
 
     return (
       <div className="players-container">
@@ -89,16 +69,15 @@ class Players extends React.Component {
         </div>
 
         {playerOne && playerTwo && (
-          <button
+          <Link
             className="btn-battle"
-            onClick={() =>
-              this.setState({
-                battle: true
-              })
-            }
+            to={{
+              pathname: "/battle/results",
+              search: `?playerOne=${playerOne}&playerTwo=${playerTwo}`
+            }}
           >
             Battle
-          </button>
+          </Link>
         )}
       </div>
     );
