@@ -27,6 +27,7 @@ const ReposGrid = ({ repos }) => (
 
       return (
         <Card
+          key={html_url}
           header={`#${index + 1}`}
           avatar={avatar_url}
           href={html_url}
