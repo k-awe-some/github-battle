@@ -31,7 +31,7 @@ Pull requests are welcome and appreciated. For major changes, please open an iss
 
 ## Sources
 
-This app is inspired by [@tylermcginnis](https://github.com/tylermcginnis) 's React tutorial.
+This app is inspired by [@tylermcginnis](https://github.com/tylermcginnis) 's React tutorials.
 
 ## License
 
