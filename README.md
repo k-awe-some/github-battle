@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GitHub Battle
 
 [GitHub Battle](https://github-battling.herokuapp.com/) is a ReactJS-based that displays the most popular GitHub repositories in a variety of languages and lets two GitHub users to battle.
@@ -36,3 +37,7 @@ This app is inspired by [@tylermcginnis](https://github.com/tylermcginnis) 's Re
 ## License
 
 This app is available under [MIT](https://choosealicense.com/licenses/mit/) license.
+=======
+# github-battle
+React.js | App that fetches the most popular GitHub repos and allows users to battle.
+>>>>>>> 9fbee8c544fc1a5aae7b6756fe2a087b422c9674
