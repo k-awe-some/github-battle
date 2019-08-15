@@ -1,10 +1,10 @@
 # GitHub Battle
 
-[GitHub Battle](https://github-battling.herokuapp.com/) is a ReactJS-based that displays the most popular GitHub repositories in a variety of languages and lets two GitHub users to battle.
+[GitHub Battle](https://github-battling.herokuapp.com/) is a **ReactJS-based** web app that displays the most popular GitHub repositories in a variety of languages and also allows two GitHub users to battle.
 
 ## Description
 
-Using the [GitHub API](https://developer.github.com/v3/), the current version of this web app fetches the most popular repos from GitHub in Javascript, Ruby, Java, CSS and Python languages. Each repo comes with such information as name, username, and the number of stars, forks and open issues.
+Using the [GitHub API](https://developer.github.com/v3/), the current version of this app fetches the most popular repos from GitHub in **Javascript, Ruby, Java, CSS and Python** languages. Each repo comes with such information as _repo name, username, user avatar, and the number of stars, forks and open issues_.
 
 The Battle tab allows two GitHub users to 'battle' to see which one has a better profile. The results are based on the number of stars and followers each user has at the time of battling.
 
